@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/bench/">
+    <Project Path="bench/SyncSphere.LoadTest/SyncSphere.LoadTest.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/SyncSphere.Client/SyncSphere.Client.csproj" />
+    <Project Path="src/SyncSphere.Contracts/SyncSphere.Contracts.csproj" />
+    <Project Path="src/SyncSphere.Server/SyncSphere.Server.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SyncSphere.Tests/SyncSphere.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,21 @@
+services:
+  redis:
+    image: redis:8
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      retries: 10
+
+  node-1: &node
+    build: { context: . }
+    depends_on:
+      redis: { condition: service_healthy }
+    ports: ["5101:8080"]
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      SyncSphere__RedisConnectionString: redis:6379
+
+  node-2:
+    <<: *node
+    ports: ["5102:8080"]
